@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/core/util/utils.dart';
 import 'package:flutter_app/ui/views/launch.dart';
 
 void main() {
@@ -10,6 +11,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: LaunchView());
+    return MaterialApp(
+      // Khai báo lấy key context để dùng cho app
+      navigatorKey: Utils.navigatorKey,
+      debugShowCheckedModeBanner: false,
+      home: LaunchView(),
+    );
   }
 }

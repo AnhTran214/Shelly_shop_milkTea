@@ -7,3 +7,6 @@ const String txtSlogan = "Ngọt ngào từng giọt";
 const String txtLogin = "ĐĂNG NHẬP";
 const String txtRegister = "Đăng ký";
 const String txtLoading = "Chờ chút nhé...";
+const String txtNoAcc = "Bạn chưa có tài khoản?";
+const String txtPhone = "Số điện thoại";
+const String txtPassword = "Mật khẩu";

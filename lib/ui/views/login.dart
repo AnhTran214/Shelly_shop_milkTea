@@ -32,7 +32,7 @@ class _LoginViewState extends State<LoginView> {
               SizedBox(height: 32),
               TextField(
                 decoration: InputDecoration(
-                  labelText: 'Số điện thoại',
+                  labelText: txtPhone,
                   prefixIcon: const Icon(Icons.phone, color: bgColorItems),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
@@ -43,7 +43,7 @@ class _LoginViewState extends State<LoginView> {
               TextField(
                 obscureText: true,
                 decoration: InputDecoration(
-                  labelText: 'Mật khẩu',
+                  labelText: txtPassword,
                   prefixIcon: const Icon(Icons.lock, color: bgColorItems),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
@@ -53,7 +53,11 @@ class _LoginViewState extends State<LoginView> {
               SizedBox(height: 24),
               SizedBox(
                 width: double.infinity,
-                height: 48,
+                // Chiều cao chuẩn của button cho cả mobile lẫn tablet
+                height: (MediaQuery.of(context).size.width * 0.13).clamp(
+                  48,
+                  72,
+                ),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: bgColorItems,
@@ -62,28 +66,19 @@ class _LoginViewState extends State<LoginView> {
                     ),
                   ),
                   onPressed: () {},
-                  child: Text(txtLogin, style: txtLoginStyle),
+                  child: Text(txtLogin, style: txtLoginButtonStyle),
                 ),
               ),
               SizedBox(height: 12),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Bạn chưa có tài khoản?"),
+                  Text(txtNoAcc, style: normalTextStyle),
                   SizedBox(
                     height: 40,
                     child: TextButton(
                       onPressed: () {},
-                      child: Text(
-                        txtRegister,
-                        style: TextStyle(
-                          color: bgColorItems,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                          decoration: TextDecoration.underline,
-                          decorationColor: bgColorItems,
-                        ),
-                      ),
+                      child: Text(txtRegister, style: txtRegisterLoginStyle),
                     ),
                   ),
                 ],
